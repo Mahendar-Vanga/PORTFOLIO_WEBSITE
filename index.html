@@ -14,15 +14,24 @@
             <h2>ahendar Vanga</h2>
         </div>
         <ul class="navmenu">
-            <li class="list"><a href="">Home</a></li>
+            <li class="list"><a href="" target="_blank">Home</a></li>
             <li class="list"><a href="">About</a></li>
             <li class="list"><a href="">Contact</a></li>
         </ul>
-        <div class="bars">
+        <div class="bars" onclick="togglemenu()">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
     </nav>
 </body>
+
+<script>
+    function togglemenu(){
+            const menuToggle=document.querySelector('.navmenu');
+            const navimenu=document.querySelector('.bars');
+            menuToggle.classList.toggle('active');
+            navimenu.classList.toggle('active');
+        }
+</script>
 </html>
