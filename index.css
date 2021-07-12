@@ -629,6 +629,7 @@ nav{
         row-gap: 10px;
         justify-items: center;
         place-items: center;
+        background:transparent;
     }
     .container .videoContainer
     {
@@ -641,10 +642,10 @@ nav{
         border-radius: 12px;
         border: 2px solid transparent;
     }
-    .container .videoContainer:hover{
+/*     .container .videoContainer:hover{
         border: 2px solid var(--border-hover);
 
-    }
+    } */
     .container .videoContainer video{
         display: none;
         pointer-events: none;
