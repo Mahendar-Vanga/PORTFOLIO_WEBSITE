@@ -1,17 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Qahiri&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Tangerine:wght@700&display=swap');
 *{
     margin: 0;
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
-    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: 'Tangerine', cursive;;
+}
+:root
+{
+    --primary-color:#e4efe7;
+    --secondary-color:white;
+    --font-color:black;
+    --hover-color:#00EAD3;
+    --font-bld:800;
+    --border-hover:#8912eb;
+    --gitcolor:white;
+}
+/* darkmode */
+.darktheme
+{
+    --primary-color:#152028;
+    --secondary-color:black;
+    --font-color:white;
+    --hover-color:#00EAD3;
+    --font-bld:500;
+    --gitcolor:cornsilk;
+
 }
 html
 {
-    scroll-behviour: smooth;
+    scroll-behavior: smooth;
 }
 body
 {
-    background: #E4EFE7;
+    background: var(--primary-color);
     font-weight: 600;
 }
 
@@ -20,10 +44,16 @@ nav{
     position: relative;
     top: 0;
     left: 0;
-    background-color: white;
+    background-color: var(--secondary-color);
     width: 100%;
     height: 60px;
     display: block;
+}
+/* navbar sticky */
+.sticky{
+    position: fixed;
+    top: 0;
+    z-index: 1;
 }
 /* logo div */
 .logo_name{
@@ -33,23 +63,26 @@ nav{
     justify-content: center;
     width: 100%;
     height: 100px;
+    letter-spacing: 2px;
+
 }
-.logo_name img{
-    width: 60px;
-    height: 60px;
-    left: 15px;
-    top: 1px;
+.logo_name h1{
+    font-size: calc(1% + 120px);
+    color: var(--font-color);
+    left: 18px;
+    top: -50px;
+    font-weight: var(--font-bld);
     position: absolute;
-}
+    font-family: 'Qahiri', sans-serif;}
 .logo_name h2
 {
     text-align: left;
-    font-size: 1.5em;
-    color: black;
-    left: 70px;
+    font-size: calc(1% + 30px);
+    color: var(--font-color);
+    left: 75px;
     top: 20px;
     position: absolute;
-    font-family: Arial,cursive, Helvetica, sans-serif;
+    font-family: 'Qahiri', sans-serif;
 }
 /* navmeu */
 .navmenu {
@@ -59,34 +92,45 @@ nav{
     flex-direction: row;
     list-style: none;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 12px;
+    right: calc(5% + 20px);
 }
 .navmenu li{
     width: 60px;
     height: 4vh;
     padding: 0px;
-    margin: 5px;
+    margin: calc(1% + 5px);
     display: flex;
     align-items: center;
     justify-content: center;
 }
+.navmenu li:nth-child(3)
+{
+    width: 80px;
+    right: 2px;
+
+}
 /* adding hover effects to lists*/
 .navmenu li:hover
 {
-   background: #E4EFE7;
+   background: var(--primary-color);
+   color: var(--hover-color);
+
 }
 
 .navmenu li > a
 {
-    font-size: 0.9em;
-    color: black;
+    font-size: calc(10% + 10px);
+    color: var(--font-color);
     text-transform: uppercase;
     font-weight: 700;
+    letter-spacing: 2px;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
 }
 .navmenu li a:hover
     {
-        color: white;
+        color: var(--hover-color);
     } 
 /* Creating Span Bars */
 .bars{
@@ -105,7 +149,7 @@ nav{
 .bars span{
     width: 30px;
     height: 5px;
-    background: black;
+    background: var(--font-color);
     position: relative;
     top: 2px;
     left: 0;
@@ -113,6 +157,369 @@ nav{
     padding: 3px;
     display: block;
     border-radius: 20px;
+}
+/* dark mode div */
+.darkmodeToggle
+{
+    width: calc(1% + 2vw);
+    height: calc(1% + 5vh);
+    position: absolute;
+    top: calc(3% + 15px);
+    right: calc(3% + 10px);
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    padding-left: 20px;
+}
+.darkmodeToggle i {
+    text-decoration: none;
+    color: var(--font-color);
+    font-size: calc(15% + 20px);
+}
+.darkmodeToggle i:hover
+{
+    color: var(--hover-color);
+}
+/* homepage section */
+#home
+{
+    margin: 0;
+    position: relative;
+    top: 0;
+    height: 100.2vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container
+{
+    height: 80vh;
+    width: 97vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5em;
+    background: black;
+    border: 2px solid transparent;
+
+}
+.container:hover{
+    border: 2px solid var(--border-hover);
+
+}
+.container .videoContainer
+{   width: calc(50% + 10vw);
+    margin-top: -30px;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .videoContainer video{
+    width: calc(15% + 200px);
+    height: calc(5% + 200px);
+    position: relative;
+    left: 80px;
+    top: -5px;
+    border-radius: 1em;
+}
+.container .videoContainer .pic{
+    display: none;
+}
+/* textcontainer div */
+.textcontainer
+{
+    position: relative;
+    width: calc(90% + 100px);
+    height: calc(50% + 100px);
+    left: -90px;
+    display: flex;
+    align-items: center;
+    border:2px solid transparent;
+    background: rgba(275, 275, 275, 0.2);
+    border-radius: 8px;
+    z-index: 999;  
+    padding: -20px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.textcontainer:hover{
+    border: 2PX solid var(--border-hover) ;
+
+}
+.textcontainer::before{
+    content: '';
+    position: absolute;
+    left: 110%;
+    top: -80%;
+    width: 40%; height: 300%;
+    background-image: linear-gradient(145deg, transparent,#ccc, transparent);
+    transition: 1.5s;
+    filter: blur(2PX);
+    opacity: 0;
+    transform: rotate(45deg)
+}
+.textcontainer:hover:before
+{
+   left: -110%;
+   opacity: 1;
+}
+@keyframes effect{
+    from{
+        top: -350px;
+    }
+    to{
+        top: 800px;
+    }
+}
+.textcontainer .circle
+{
+    width: 15px;
+    height: 15px;
+    position: relative;
+    background: #0f0;
+    display: flex;
+    margin: 0 5px;
+    clip-path: circle();
+    top: -45%;
+    right: -2%;
+}
+.circle:nth-child(1){
+    background: red;
+}
+.circle:nth-child(2){
+    background: yellow;
+}
+
+.textcontainer h1{
+    color: var(--font-color);
+    font-size: 6em;
+    position: absolute;
+    top: 20px;
+    left: 25%;
+    text-align: center;
+
+}
+.textcontainer h1 span
+{   color: var(--hover-color);
+    font-size: 0.3em;
+    position:absolute;
+    left: 20px;
+    top: 80px;
+    font-weight: 300;
+    width: 180%;
+}
+.textcontainer p{
+    color: var(--font-color);
+    font-size: 2em;
+    font-weight: 600;
+    font-family: 'Tangerine', cursive;;
+    position: absolute;
+    left: 20%;
+}
+.textcontainer p span
+{
+    color: var(--hover-color);
+    font-size: 1.2em;
+    font-weight: 400;
+}
+.animatetext{
+    position: absolute;
+    top: 260px;
+    left: 30%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+#textanimate{
+    position: relative;
+    font-size: 3em;
+    color: var(--secondary-color);
+}
+.animatetext span{
+    font-size: 0.9em;
+    color: #0f0;
+    display: none;
+}
+/* hire me button */
+.textcontainer .hireme_btn
+{
+    width: 100px;
+    height: 2vh;
+    position: relative;
+    top: 35%;
+    right: -60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2em;
+}
+.textcontainer .hireme_btn a{
+    padding: 5px 10PX;
+    border-radius: 2em;
+    position: relative;
+    overflow: hidden;
+    background: var(--border-hover);
+    color: white;
+    font-size: calc(1% + 1em);
+    font-weight: 600;
+    border: 2px solid  var(--border-hover);
+    transition: 0.5s;
+    font-family: "Poppins", sans-serif;;
+}
+.textcontainer .hireme_btn a:hover{
+    background: transparent;
+    width: 180%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+}
+.textcontainer .hireme_btn a::before{
+    content: '';
+    position: absolute;
+    left: -120%;
+    top: -50%;
+    width: 20%; height: 200%;
+    background-image: linear-gradient(45deg, transparent,#ccc, transparent);
+    transition: 1.75s;
+    transform: rotate(45deg);
+    opacity: 0;
+}
+.textcontainer .hireme_btn a:hover:before{
+    left: 120%;
+    opacity: 1;
+}
+
+/* social media icons */
+.sci
+{
+    position: absolute;
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    width: 40px;
+    height: 200px;
+    background: var(--secondary-color);
+    /* padding:10px; */
+    border-radius: 4px;
+    left: 5px;
+    /* border: 3px solid var(--border-hover); */
+}
+.sci .icons
+{
+    position: relative;
+    width: 200px;
+    height: 40px;
+    left: 0.3em;
+    margin: 4px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 2s;
+    border-radius: 4px;
+}
+
+.sci .icons a
+{
+    position: relative;
+    width: 200px;
+    height: 40px;
+    left: 2%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+.sci .icons:nth-child(1){
+    background: #4267B2;
+    width: 30px;
+}
+.sci .icons:nth-child(1):hover{
+    background: #4267B2;
+    width: 200px;
+    transition: 1s;
+
+}
+
+
+.sci .icons:nth-child(2){
+    background: #E1306C;
+    width: 30px;
+
+}
+.sci .icons:nth-child(2):hover{
+    background: #E1306C;
+    width: 200px;
+    transition: 1s;
+
+}
+.sci .icons:nth-child(3){
+    background: #1DA1F2;
+    width: 30px;
+
+}
+.sci .icons:nth-child(3):hover{
+    background: #1DA1F2;
+    width: 200px;
+    transition: 1s;
+
+}
+.sci .icons:nth-child(4){
+    background: var(--gitcolor);
+    width: 30px;
+}
+.sci .icons:nth-child(4):hover{
+    background: var(--gitcolor);
+    width: 200px;
+    transition: 1s;
+
+}
+.sci .icons a .namesci{
+    width: 190px;
+    height: 50px;
+    top: -50%;
+    font-size: 0.3em;
+    position: absolute;
+    color: black;
+    padding-left: 5%;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+}
+
+.sci .icons a .namesci:hover{
+    width: 190px;
+    opacity: 1;
+    transition: 4s;
+    left: 20%;
+}
+.sci .icons a i
+{
+    font-size: 1.5em;
+    color: cornsilk;
+    left: 1%;
+    position: fixed;
+}
+
+
+.sci .icons a .fa-github
+{
+    color: black;
+    position: fixed;
+
 }
 
 /* making Responsive  */
@@ -128,30 +535,36 @@ nav{
     }
     .navmenu
     {
-        width: 95vw;
-        height: 20vh;
+        width: 100vw;
+        height: calc(20% + 18vh);
         position: absolute;
         left: 0;
         top:60px;
         display: block;
         opacity: 0;
         pointer-events: none;
+        z-index: 999;
+        background: var(--primary-color);
     }
     .navmenu li {
-        width:97vw;
+        width:94vw;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: white;
-        border: 2px solid white;
+        background: var(--secondary-color);
+        border: 2px solid var(--secondary-color);
         border-radius: 4px;
+    }
+    .navmenu li:nth-child(3){
+        width: 94vw;
     }
     .navmenu li:hover
     {
-        background: #E4EFE7;
+        background: var(--primary-color);
+        border: 2px solid var(--secondary-color);
     }
     .navmenu li a {
-        color: #E4EFE7;
+        color: var(--primary-color);
         width: 97vw;
         display: flex;
         justify-content: center;
@@ -160,18 +573,249 @@ nav{
     }
     .navmenu li a:hover
     {
-        color: black;
+        color: var(--hover-color);
     } 
     .bars
     {
         opacity: 1;
-        position: fixed;
         top: 5px;
         right: 3vw;
-    }
+        transition: all 1s;
+    }  
     .active
     {
         opacity: 1;
         pointer-events: all;
+        transition: all 1s;
+        animation: popup 2s;
+    }
+    @keyframes popup
+     {
+        from {
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+    .darkmodeToggle
+    {
+        right: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top:0;
+        top: calc(2% + 12px);
+    }
+    .darkmodeToggle a 
+    {
+        font-size: 1.8em;
+    }
+    /* homepage section  */
+    #home
+    {
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container
+    {
+        width: 90vw;
+        height: 90vh;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+        justify-items: center;
+        place-items: center;
+    }
+    .container .videoContainer
+    {
+        width: 80vw;
+        height: 40vh;
+        background: cornsilk;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+        border: 2px solid transparent;
+    }
+    .container .videoContainer:hover{
+        border: 2px solid var(--border-hover);
+
+    }
+    .container .videoContainer video{
+        display: none;
+        pointer-events: none;
+    }
+    .container .videoContainer .pic{
+        display: flex;
+        background: white;
+        width: 35vw;
+        top: 10%;
+        height: 20vh;
+        position: absolute;
+        /* clip-path: circle(); */
+        border-radius: 50%;
+        border: 4px solid var(--border-hover);
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        background-image: url("BGIMG.JPEG");
+    }
+    /* text container div */
+    .textcontainer{
+        width: 80vw;
+        height: calc(50% + 150px);
+        left: 0.2em;
+        top: calc(-40% + 5vh);
+        border: 2px solid transparent;
+
+    }
+    .textcontainer:hover{
+        border: 2px solid var(--border-hover);
+    }
+    .textcontainer h1{
+        font-size: calc(50% + 3em);
+    }
+    .textcontainer h1>span{
+        top: 50px;
+        width: 60vw;
+        left: 1vw;
+        font-size: calc(25% + 0.1em);
+    }
+    .textcontainer p {
+        font-size: calc(30% + 1.2em);
+        top: 100px;
+    }
+    .animatetext{
+        position: absolute;
+        top: -80px;
+    }
+    /* hireme botton */
+    .hireme_btn{
+        position: relative;
+        left: 15%;
+    }
+    /* sci divs */
+    .container .sci{
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        justify-content: center;
+        left: 22%;
+        height: 10%;
+        width: 60%;
+        border-radius: 10px;
+    }
+    .container .sci::before{
+        content: "Mahendar Vanga";
+        position: absolute;
+        color: #152028;
+        z-index: 999;
+        top: -60%;
+        left: calc(-40% + 10vw);
+        font-size: calc(50% + 10px);
+        width: 80vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .sci .icons{
+        margin: 10px 2px;
+        border-radius: 50%;
+        width: calc(12% + 120px);
+        height: 40px;
+        left: calc(-2.5% + 5px);
+    }
+    .sci .icons:nth-child(1){
+        background: #4267B2;
+        width: calc(1% + 10vw);
+        height: calc(1% + 6vh);
+        border: 2px solid transparent;
+    }
+    .sci .icons:nth-child(1):hover{
+        background: transparent;
+        width: calc(1% + 10vw);
+        border: 2px solid #4267B2;
+        transition: 1s;
+    
+    }
+    
+    
+    .sci .icons:nth-child(2){
+        background: #E1306C;
+        width: calc(1% + 10vw);
+        height: calc(1% + 6vh);
+        border: 2px solid transparent;    
+    }
+    .sci .icons:nth-child(2):hover{
+        background: transparent;
+        width: calc(1% + 10vw);
+        border: 2px solid #E1306C;
+        transition: 1s;
+    
+    }
+    .sci .icons:nth-child(3){
+        background: #1DA1F2;
+        width: calc(1% + 10vw);
+        height: calc(1% + 6vh);
+        border: 2px solid transparent;
+    
+    }
+    .sci .icons:nth-child(3):hover{
+        background: transparent;
+        width: calc(1% + 10vw);
+        border: 2px solid #1DA1F2;
+        transition: 1s;
+    
+    }
+    .sci .icons:nth-child(4){
+        background: white;
+        width: calc(1% + 10vw);
+        height: calc(1% + 6vh);
+        border: 2px solid transparent;
+    }
+    .sci .icons:nth-child(4):hover{
+        background: transparent;
+        width: calc(1% + 10vw);
+        border: 2px solid black;
+        transition: 1s;
+    
+    }
+    .sci .icons a
+    {
+        position: relative;
+        margin: 10px;
+        padding: 10px;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    .sci .icons a .fa-github
+    {
+        color: black;
+        position: relative;
+
+    }
+    .sci .icons a .namesci{
+        display: none;
+    }
+    .sci .icons a i{
+        position: relative;
+        color: cornsilk;
+    }
+    .sci .icons a .fa-facebook:hover{
+        color:#4267B2;
+    }
+    .sci .icons a .fa-instagram:hover{
+        color:#E1306C;
+    }
+    .sci .icons a .fa-twitter:hover{
+        color:#1DA1F2;
     }
 }

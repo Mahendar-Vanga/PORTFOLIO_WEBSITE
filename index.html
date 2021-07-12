@@ -4,36 +4,119 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">  
     <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
 <body>
-    <nav>
+    <nav id="nav">
         <div class="logo_name">
             <a href="">
-                <img src="LOGO3.png" alt="">
+                <h1>M</h1>
                 <h2>ahendar Vanga</h2>
              </a>
         </div>
         <ul class="navmenu">
-            <li class="list"><a href="" target="_blank">Home</a></li>
-            <li class="list"><a href="">About</a></li>
-            <li class="list"><a href="">Contact</a></li>
+            <li class="list"><a href="#" >Home</a></li>
+            <li class="list"><a href="#">About</a></li>
+            <li class="list"><a href="#">Contact</a></li>
         </ul>
         <div class="bars" onclick="togglemenu()">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
+        <div class="darkmodeToggle">
+            <i class="fa fa-moon-o" aria-hidden="true"></i>
+        </div>
     </nav>
+    <section id="home">
+        <div class="container">
+            <div class="videoContainer">
+                <video autoplay  muted>
+                    <source src="homepage_video.mp4" type="audio/mpeg">
+                </video>
+                <div class="pic">
+                    
+                </div>
+            </div>
+            <div class="textcontainer">
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <h1>Hello<span>Welcome to My Personal Portfolio</span></h1>
+                <p>I'am <span>Mahendar Vanga</span><br> Young <span>Frontend Developer...</span></p>
+                <div class="animatetext">
+                    <h2 id="textanimate">Be
+                        <span style="display: initial;">Amazing</span>
+                        <span>Bold</span>
+                        <span> Creative</span>
+                        <span>Cool</span>
+                        <span>Positive</span>
+                    </h2>
+                </div>
+                <div class="hireme_btn">
+                    <a href="#">Hire Me</a>
+                </div>
+            </div>
+            <div class="sci">
+                <div class="icons"><a href=""><i class="fa fa-facebook" aria-hidden="true"><span class="namesci">Mahi Mahendar | Face Book</span></i></a></div>
+                <div class="icons"><a href=""><i class="fa fa-instagram" aria-hidden="true"><span class="namesci" id="namesci">Urs_mahendar_vanga | Instagram</span></i></a></div>
+                <div class="icons"><a href=" "><i class="fa fa-twitter" aria-hidden="true"><span class="namesci">Mahendar Vanga | Twitter</span></i></a></div>
+                <div class="icons"><a href=""><i class="fa fa-github" aria-hidden="true"><span class="namesci">Mahendar-Vanga | Github</span></i></a></div>
+            </div>
+            
+        </div>
+    </section>
 </body>
 
 <script>
+    // nav stick function
+    var navbar = document.getElementById('nav')
+
+    var stikcy = navbar.offsetTop;
+    window.onscroll = function(){
+        if(window.scrollY > stikcy){
+            navbar.classList.add('sticky')
+        }
+        else{
+            navbar.classList.remove('sticky')
+        }
+    }
+    // tooglemenu icon
     function togglemenu(){
             const menuToggle=document.querySelector('.navmenu');
             const navimenu=document.querySelector('.bars');
             menuToggle.classList.toggle('active');
-            navimenu.classList.toggle('active');
+            navimenu.classList.toggle('baractive');
         }
+    
+    // dark theme toggle
+    var darkTheme = document.querySelector(".darkmodeToggle");
+
+    darkTheme.onclick = function(){
+        document.body.classList.toggle("darktheme");
+        if(document.body.classList.contains("darktheme")){
+            darkTheme.innerHTML = '<i class="fa fa-sun-o" aria-hidden="true"></i>'
+        }
+        else{
+            darkTheme.innerHTML = '<i class="fa fa-moon-o" aria-hidden="true"></i>'
+ 
+        }
+    }
+    // homepage section 
+    // animated text in container div
+    var text=document.getElementById('textanimate')
+
+    var word=text.getElementsByTagName('span')
+    var i = 0;
+
+    function rotator()
+    {
+        word[i].style.display = 'none'
+        i = (i + 1)% word.length;
+        word[i].style.display = 'initial'
+    }
+    setInterval(rotator, 800)
 </script>
 </html>
